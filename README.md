@@ -4,7 +4,7 @@ Simple Travis example for C using GCC compiler based on the identifier program p
 
 Test results:
 
-[<img alt="Build Status" src="https://www.travis-ci.com/renanbmx123/TF_TCS.svg?branch=main" height="40">][travis-url]
+[<img alt="Build Status" src="https://api.travis-ci.com/renanbmx123/TF_TCS.svg?branch=master" height="40">][travis-url]
 
 Important files:
 
@@ -20,7 +20,10 @@ Author
 
 ### INFORMAÇÕES GERAIS
 
-O objetivo desse trabalho é utilizar na prática os conceitos e ferramentas de teste de software estudados durante o semestre.•Pontuação:Essa avaliação vaivaler 50% da minha parte da nota.•Entrega:23/06/2021, 17:30 (Hard deadline)•Trabalho pode ser realizado sozinho ou em dupla, sem possibilidade de uma configuração diferente.
+O objetivo desse trabalho é utilizar na prática os conceitos e ferramentas de teste de software estudados durante o semestre.
+- Pontuação:Essa avaliação vaivaler 50% da minha parte da nota.
+- Entrega:23/06/2021, 17:30 (Hard deadline) 
+- Trabalho pode ser realizado sozinho ou em dupla, sem possibilidade de uma configuração diferente.
 
 ### ESPECIFICAÇÃO DO PROBLEMA
 
@@ -38,7 +41,7 @@ A função cryptrecebe 5 argumentos, o key é um ponteiro para a chave criptogr�
 
 ### RECURSOS UTILIZADOS 
 
-Vocês devem utilizar como base o seguinte projeto: https://github.com/rafaelgaribotti/TCS-TF-2021-1.Este projeto usa gcc como compilador,make para automatizar a compilação, e deve usar o Travis CI como ferramenta de Continuous Integration. Além disso, vocês devem utilizar também ogcovcomo ferramenta de análise de cobertura de código, além das seguintes ferramentas voltas a teste:cppcheck,valgrindesanitizer.Também devem usar uma ferramenta para descrever os testes. Eu sugiro o uso do nity, já mostrado em aula, mas este ponto fica de livre escolha caso alguns grupos queiram pesquisar e usar outras ferramentas. Neste sentido, deixo a critério do grupo decidir qual ferramenta utilizar para este propósito. Algumas alternativas mais conhecidas incluem:gtest,cpptest,catch. Entretanto existem dezenas de outras opções.Os alunos podem propor ferramentas adicionaise isso vai ser altamente valorizado na avaliação.
+Vocês devem utilizar como base o seguinte projeto: [Git TCS-TF-2021-1](https://github.com/rafaelgaribotti/TCS-TF-2021-1). Este projeto usa gcc como compilador,make para automatizar a compilação, e deve usar o Travis CI como ferramenta de Continuous Integration. Além disso, vocês devem utilizar também ogcovcomo ferramenta de análise de cobertura de código, além das seguintes ferramentas voltas a teste:cppcheck,valgrindesanitizer.Também devem usar uma ferramenta para descrever os testes. Eu sugiro o uso do nity, já mostrado em aula, mas este ponto fica de livre escolha caso alguns grupos queiram pesquisar e usar outras ferramentas. Neste sentido, deixo a critério do grupo decidir qual ferramenta utilizar para este propósito. Algumas alternativas mais conhecidas incluem:gtest,cpptest,catch. Entretanto existem dezenas de outras opções.Os alunos podem propor ferramentas adicionaise isso vai ser altamente valorizado na avaliação.
 
 ### ENTREGÁVEIS
 - Um arquivo zip com o código fonte do repositório eo relatório, ambos postados no Moodle ANTES do prazo. 

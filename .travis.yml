@@ -10,9 +10,16 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - gcc
+      - valgrind
+      - cppcheck
+      - gcovr
+before-install:
+  - sudo apt install cppcheck
+  - sudo apt install valgrind
 install:
   - "[ $GCC = gcc ] && export GCC=gcc || true"
 script:
-# - make
-  - cd foo; make
-#  - make test
+  - make clean cppcheck
+  - make clean compile run
+  - make clean cov
+  - make clean compile valgrind

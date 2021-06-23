@@ -22,5 +22,6 @@ script:
   - cd Crypt; make
   - cd Crypt; make cov
   - cd Crypt; make cppcheck
+  - cd Crypt; make compile sanitizer
   - cd Crypt; make compile run
   - cd Crypt; make compile valgrind

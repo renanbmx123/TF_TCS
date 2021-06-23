@@ -47,14 +47,14 @@ SRC_FILES1=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
   src/*.c \
-  test/TestFoo.c \
-  test/test_runners/TestFoo_Runner.c \
+  test/TestCrypt.c \
+  test/test_runners/TestCrypt_Runner.c \
   test/test_runners/all_tests.c
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
 
 ##### General commands #####
-all: clean cppcheck clean compile run clean compile cov clean compile valgrind
+all: clean cppcheck clean compile run clean compile cov clean compile valgrind sanitizer
 
 
 cppcheck:
@@ -89,32 +89,18 @@ valgrind:
 	@echo "  "
 	- valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET1) > valgrind.log
 	rm -fr $(ALL) *.o cov* *.dSYM *.gcda *.gcno *.gcov
-
+sanitizer: 
+	@echo "  "
+	@echo "  "
+	@echo "     SANITIZER       "
+	@echo "  "
+	$(C_COMPILER) $(CFLAGS) -fsanitize=address $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1) 
+	- ./$(TARGET1) -v
 
 clean:
 	$(CLEANUP) $(TARGET1)
 	rm -fr $(ALL) *.o cov* *.dSYM *.gcda *.gcno *.gcov
 
 
-#ci: CFLAGS += -Werror && $(CLEANUP) $(TARGET1)
+ci: CFLAGS += -Werror && compile
 
-#all: app
-	
-#app: main.o xtea.o aes.o blowfish.o
-#	$(CC) main.o xtea.o aes.o blowfish.o -o app
-#	rm -rf *.o
-
-#main.o: src/main.c
-#	$(CC) $(CFLAGS) $^
-
-#xtea.o: src/xtea.c
-#	$(CC) $(CFLAGS) $^
-
-#aes.o: src/aes.c
-#	$(CC) $(CFLAGS) $^
-	
-#blowfish.o: src/blowfish.c
-#	$(CC) $(CFLAGS) $^
-
-clean:
-	rm -rf *.o app

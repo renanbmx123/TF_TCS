@@ -52,8 +52,8 @@ Vocês devem utilizar como base o seguinte projeto: [Git TCS-TF-2021-1](https://
 
 | Número do Teste| Nome do Teste| Casos de Teste | 
 |----------------|--------------|----------------|
-| 1| <nome do teste1>| [{entrada},{saida esperada}] |
-| 2| <nome do teste2>| [{entrada},{saida esperada}] |
+| 1 | <nome do teste1> | [{entrada},{saida esperada}] |
+| 2 | <nome do teste2> | [{entrada},{saida esperada}] |
 | ...| ...| ... |
 | N |<nome do testeN>| [{entrada},{saida esperada}] |
 

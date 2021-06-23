@@ -15,7 +15,6 @@ const uint32_t KEY192[] = {0x1492580a, 0xd34a91b6, 0xa9693478,  0xa9693478, 0x71
 const uint32_t KEY256[] = {0x1492580a, 0xd34a91b6, 0xa9693478,  0xa9693478, 0x7107c8d2, 0x9fdd41e2, 0xa6d0812d, 0x95497345};
 
 // This ar the AES Keys and ciphers. 
-const uint32_t AES128_PLAN[] = {0, 0, 0, 0};
 
 const uint32_t AES128_KEY128[]    = {0xc037f936, 0xc037f936, 0x14fc16cc, 0xac22d7cb};
 const uint32_t AES128_CIPHER128[] = {0xb1174e2d, 0x25228c4e, 0x99e1df63, 0x99e1df63};
@@ -49,7 +48,26 @@ void testReturnSizeOutputEncription(void) {
 }
 
 
+void testAESArrayTest(encType type) {
+    uint32_t output[4];
 
+    crypt(key, input, type, _encCode, output);
+    
+    switch (type){
+    case AES128:
+        TEST_ASSERT_EQUAL_UINT32_ARRAY(AES128_CIPHER128, output, 4);
+        break;
+    case AES192:
+        TEST_ASSERT_EQUAL_UINT32_ARRAY(AES128_CIPHER192, output, 4);
+        break;
+    case AES256:
+        TEST_ASSERT_EQUAL_UINT32_ARRAY(AES128_CIPHER256, output, 4);
+        break;
+    default:
+        break;
+    }
+    
+}
 
 
 TEST_GROUP(TestCrypt);
@@ -93,3 +111,25 @@ TEST(TestCrypt, TestCrypt4)
   testReturnSizeOutputEncription();  
 }
 
+
+TEST(TestCrypt, TestCrypt5)
+{
+  _encCode = ENCODE;
+  _encType = AES128;
+  testAESArrayTest(_encType);  
+}
+
+TEST(TestCrypt, TestCrypt6)
+{
+  _encCode = ENCODE;
+  _encType = AES192;
+  testAESArrayTest(_encType);  
+}
+
+
+TEST(TestCrypt, TestCrypt7)
+{
+  _encCode = ENCODE;
+  _encType = AES256;
+  testAESArrayTest(_encType);  
+}

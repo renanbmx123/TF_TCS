@@ -79,7 +79,7 @@ cov:
 	@echo " "
 	@echo "       COV          " 
 	@echo " "
-	- gcov -b -c src/*.c
+	- gcov -b -c src/*.c -o .
 	rm -fr $(ALL) *.o cov* *.dSYM *.gcda *.gcno *.gcov
 
 valgrind:

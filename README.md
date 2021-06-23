@@ -15,7 +15,7 @@ Important files:
 
 Author
 ------
-[**Rafael Garibotti**](https://br.linkedin.com/in/rafaelgaribotti)
+[**Renan Alves**](https://www.linkedin.com/in/renan-alves-2950a884/)
 
 
 License
